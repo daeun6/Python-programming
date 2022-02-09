@@ -1,0 +1,19 @@
+
+n=int(input())
+
+for i in range(n):
+    a=input()
+    b=list(a)
+    sum=0
+    r=1
+    for i in b:
+        if i== 'O':
+            sum+=r
+            r+=1
+        else:
+            r=1
+    print(sum)
+
+
+
+        
