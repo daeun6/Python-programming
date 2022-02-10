@@ -1,0 +1,19 @@
+#셀프넘버가 아닌 생성자가 있는 숫자들을 구하고 그 반대를 출력
+
+number=set(range(1,10000))
+not_self=set() #생성자가 있는 숫자
+
+def selfnum():
+    for i in number:
+        for num in str(i):
+            i+=int(num)
+        not_self.add(i)
+
+    self_num=number-not_self
+    for self_n in sorted(self_num):
+        print(self_n)
+
+
+selfnum()
+    
+    
