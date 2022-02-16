@@ -1,0 +1,12 @@
+n = int(input())
+
+n2 = 666
+count = 0
+
+while True :
+    if '666' in str(n2):
+        count+=1
+    if count == n :
+        print(n2)
+        break
+    n2+=1
