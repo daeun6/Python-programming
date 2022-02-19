@@ -1,0 +1,23 @@
+n = int(input())
+
+stair = [0]
+
+for _ in range(n):
+    stair.append(int(input()))
+
+
+if n == 1:
+    print(stair[1])
+else :
+    dp = [0] * (n+1) #n번째 숫자의 계단까지의 최댓값 
+    dp[1] = stair[1]
+    dp[2] = stair[1] + stair[2]
+
+    for i in range(3,n+1):
+        dp[i] = max(dp[i-3]+stair[i-1]+stair[i], dp[i-2]+stair[i])
+        #(n-1)계단을 밟고 올라온 경우는 세 번 연속 계단을 오를 수 없기 때문에
+        # 그 이전 계단인 (n-3)계단이 됨
+        #(n-2)계단을 밟고 올라온 경우와 비교하여 최댓값을 찾아 dp[i]에 저장
+        #dp[i] = max(dp[i-2] + arr[i] , dp[i-3] + arr[i] + arr[i - 1])
+        
+    print(dp[n])
